@@ -35,7 +35,6 @@
 	
 	<dependencies>
 	
-		<!-- Spring MVC -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>

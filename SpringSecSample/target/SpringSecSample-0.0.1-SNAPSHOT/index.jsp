@@ -7,8 +7,8 @@
 		<title>Welcome</title>
 	</head> 
 	<body>
-		<c:url value="/showMessage.html" var="messageUrl" />
-		<a href="${messageUrl}">Click to enter</a>
+		
+		<a href="admin">Click to Admin area</a>
 		<form action="Logout" method="post">
 		<input type="submit" value="logout">
 		<input type="hidden" name= "${_csrf.parameterName}" value="${_csrf.token }">

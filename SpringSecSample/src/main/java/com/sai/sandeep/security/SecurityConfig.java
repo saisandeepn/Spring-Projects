@@ -20,10 +20,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	public void configure(HttpSecurity http) throws Exception{
 		http
-		.authorizeRequests().anyRequest()
+		.authorizeRequests()
+		.antMatchers("/login").permitAll()
+		.anyRequest()
 		.authenticated()
 		.and()
 		.formLogin()
+		.loginPage("/login")
 		.and()
 		.httpBasic();
 	}

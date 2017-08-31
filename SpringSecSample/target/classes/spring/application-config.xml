@@ -12,4 +12,5 @@
  		<property name="password" value="${database.password}" />
 	</bean>
 	<bean name="bcryptEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+	
 </beans>

@@ -62,7 +62,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.formLogin()
 			.loginPage("/login")
 		.and()
-		.httpBasic();
+		.httpBasic()
+		.and()
+		.sessionManagement()
+		.maximumSessions(1);
 
 			
 		// the wildcard characters **/ ** represents that any URL which has

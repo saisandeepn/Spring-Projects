@@ -10,6 +10,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import com.sai.sandeep.dao.UserDao;
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -21,16 +23,31 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	private BCryptPasswordEncoder bcryptEncoder;
 	
 	@Autowired
+	private UserDao userDao;
+	
+	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 
-		/***In Memory Authentication
-				auth
-		.inMemoryAuthentication()
-		.withUser("user").password("password").roles("USER")
-		.and()
-		.withUser("admin").password("password").roles("USER","ADMIN");*/
+		/**
+		 * In Memory Authentication
+		 * auth
+		 * .inMemoryAuthentication()
+		 * .withUser("user").password("password").roles("USER")
+		 * .and()
+		 * .withUser("admin").password("password").roles("USER","ADMIN");
+		 * /
+		 		
 		
-		auth.jdbcAuthentication().dataSource(dataSource).passwordEncoder(bcryptEncoder);
+		/**
+		 * Using JDBC authentication
+		 * auth.jdbcAuthentication().dataSource(dataSource).passwordEncoder(bcryptEncoder);
+		 */
+		
+		/**
+		 * 
+		 */
+		
+		auth.userDetailsService(userDao).passwordEncoder(bcryptEncoder);
 	}
 	
 	public void configure(HttpSecurity http) throws Exception{

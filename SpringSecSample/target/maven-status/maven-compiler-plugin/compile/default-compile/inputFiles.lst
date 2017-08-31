@@ -1,4 +1,4 @@
-/home/sai/Desktop/Collaborate/Work/GitWorkspace/Spring-Projects/SpringSecSample/src/main/java/com/sai/sandeep/security/SecurityWebApplicationInitializer.java
-/home/sai/Desktop/Collaborate/Work/GitWorkspace/Spring-Projects/SpringSecSample/src/main/java/com/sai/sandeep/controller/LoginController.java
-/home/sai/Desktop/Collaborate/Work/GitWorkspace/Spring-Projects/SpringSecSample/src/main/java/com/sai/sandeep/controller/AdminController.java
-/home/sai/Desktop/Collaborate/Work/GitWorkspace/Spring-Projects/SpringSecSample/src/main/java/com/sai/sandeep/security/SecurityConfig.java
+/Users/sai/Work/GitSpringProjects/Spring-Projects/SpringSecSample/src/main/java/com/sai/sandeep/controller/AdminController.java
+/Users/sai/Work/GitSpringProjects/Spring-Projects/SpringSecSample/src/main/java/com/sai/sandeep/controller/LoginController.java
+/Users/sai/Work/GitSpringProjects/Spring-Projects/SpringSecSample/src/main/java/com/sai/sandeep/security/SecurityConfig.java
+/Users/sai/Work/GitSpringProjects/Spring-Projects/SpringSecSample/src/main/java/com/sai/sandeep/security/SecurityWebApplicationInitializer.java

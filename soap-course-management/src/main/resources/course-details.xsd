@@ -5,7 +5,7 @@
 	<xs:element name="GetCourseDetailsRequest">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="id" type="xs:integer"/>
+				<xs:element name="id" type="xs:int"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -18,12 +18,12 @@
 	</xs:element>
 	<xs:complexType name="CourseDetails">
 		<xs:sequence>
-			<xs:element name="id" type="xs:integer" />
+			<xs:element name="id" type="xs:int" />
 			<xs:element name="name" type="xs:string" />
 			<xs:element name="description" type="xs:string" />
 		</xs:sequence>
 	</xs:complexType>
-</schema>
+</xs:schema>
 
 
 <!-- <GetCourseDetailsRequest xmlns="http://saisandeep.com/courses"> <id>123</id> 

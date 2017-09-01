@@ -10,6 +10,7 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
 import com.sai.sandeep.soapcoursemanagement.soap.bean.Course;
 import com.sai.sandeep.soapcoursemanagement.soap.service.CourseDetailsService;
+import com.sai.sandeep.soapcoursemanagement.soap.service.CourseDetailsService.Status;
 import com.saisandeep.courses.CourseDetails;
 import com.saisandeep.courses.DeleteCourseDetailsRequest;
 import com.saisandeep.courses.DeleteCourseDetailsResponse;
@@ -28,6 +29,8 @@ public class CourseDetailsEndpoint {
 	@ResponsePayload
 	public GetCourseDetailsResponse processCourseDetailsRequest(@RequestPayload GetCourseDetailsRequest request) {
 		Course course = service.findById(request.getId());
+		if(course ==null)
+			throw new CourseNotFoundException("Invalid Course ID "+ request.getId());
 		return mapCourseDetails(course);
 	}
 
@@ -61,15 +64,22 @@ public class CourseDetailsEndpoint {
 		List<Course> courses = service.findAll();
 		return mapAllCourseDetails(courses);
 	}
-	
+
 	@PayloadRoot(namespace = "http://saisandeep.com/courses", localPart = "DeleteCourseDetailsRequest")
 	@ResponsePayload
 	public DeleteCourseDetailsResponse deleteAllCourseDetailsRequest(
 			@RequestPayload DeleteCourseDetailsRequest request) {
-		int status = service.deleteById(request.getId());
+		Status status = service.deleteById(request.getId());
 		DeleteCourseDetailsResponse response = new DeleteCourseDetailsResponse();
-		response.setStatus(status);
+		response.setStatus(mapStatus(status));
 		return response;
+	}
+
+	private com.saisandeep.courses.Status mapStatus(Status status) {
+		if (status==status.FAILURE)
+			return com.saisandeep.courses.Status.FAILURE;
+		return com.saisandeep.courses.Status.SUCCESS;
+
 	}
 
 }

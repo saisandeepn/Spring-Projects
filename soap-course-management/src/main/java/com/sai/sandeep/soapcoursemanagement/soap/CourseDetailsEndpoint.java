@@ -11,6 +11,8 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import com.sai.sandeep.soapcoursemanagement.soap.bean.Course;
 import com.sai.sandeep.soapcoursemanagement.soap.service.CourseDetailsService;
 import com.saisandeep.courses.CourseDetails;
+import com.saisandeep.courses.DeleteCourseDetailsRequest;
+import com.saisandeep.courses.DeleteCourseDetailsResponse;
 import com.saisandeep.courses.GetAllCourseDetailsRequest;
 import com.saisandeep.courses.GetAllCourseDetailsResponse;
 import com.saisandeep.courses.GetCourseDetailsRequest;
@@ -58,6 +60,16 @@ public class CourseDetailsEndpoint {
 			@RequestPayload GetAllCourseDetailsRequest request) {
 		List<Course> courses = service.findAll();
 		return mapAllCourseDetails(courses);
+	}
+	
+	@PayloadRoot(namespace = "http://saisandeep.com/courses", localPart = "DeleteCourseDetailsRequest")
+	@ResponsePayload
+	public DeleteCourseDetailsResponse deleteAllCourseDetailsRequest(
+			@RequestPayload DeleteCourseDetailsRequest request) {
+		int status = service.deleteById(request.getId());
+		DeleteCourseDetailsResponse response = new DeleteCourseDetailsResponse();
+		response.setStatus(status);
+		return response;
 	}
 
 }

@@ -1,7 +1,8 @@
-/home/sai/Desktop/Collaborate/Work/GitWorkspace/Spring-Projects/SpringSecSample/src/main/java/com/sai/sandeep/domain/Users.java
-/home/sai/Desktop/Collaborate/Work/GitWorkspace/Spring-Projects/SpringSecSample/src/main/java/com/sai/sandeep/security/SecurityWebApplicationInitializer.java
-/home/sai/Desktop/Collaborate/Work/GitWorkspace/Spring-Projects/SpringSecSample/src/main/java/com/sai/sandeep/domain/Authorities.java
-/home/sai/Desktop/Collaborate/Work/GitWorkspace/Spring-Projects/SpringSecSample/src/main/java/com/sai/sandeep/controller/LoginController.java
-/home/sai/Desktop/Collaborate/Work/GitWorkspace/Spring-Projects/SpringSecSample/src/main/java/com/sai/sandeep/dao/UserDao.java
-/home/sai/Desktop/Collaborate/Work/GitWorkspace/Spring-Projects/SpringSecSample/src/main/java/com/sai/sandeep/controller/AdminController.java
-/home/sai/Desktop/Collaborate/Work/GitWorkspace/Spring-Projects/SpringSecSample/src/main/java/com/sai/sandeep/security/SecurityConfig.java
+/Users/sai/git/Spring-Projects/SpringSecSample/src/main/java/com/sai/sandeep/domain/Authorities.java
+/Users/sai/git/Spring-Projects/SpringSecSample/src/main/java/com/sai/sandeep/service/AdminService.java
+/Users/sai/git/Spring-Projects/SpringSecSample/src/main/java/com/sai/sandeep/dao/UserDao.java
+/Users/sai/git/Spring-Projects/SpringSecSample/src/main/java/com/sai/sandeep/controller/LoginController.java
+/Users/sai/git/Spring-Projects/SpringSecSample/src/main/java/com/sai/sandeep/controller/AdminController.java
+/Users/sai/git/Spring-Projects/SpringSecSample/src/main/java/com/sai/sandeep/security/SecurityConfig.java
+/Users/sai/git/Spring-Projects/SpringSecSample/src/main/java/com/sai/sandeep/security/SecurityWebApplicationInitializer.java
+/Users/sai/git/Spring-Projects/SpringSecSample/src/main/java/com/sai/sandeep/domain/Users.java

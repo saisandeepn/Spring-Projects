@@ -1,7 +1,5 @@
 package com.sai.sandeep.soapcoursemanagement.soap.service;
 
-import static org.springframework.test.web.client.response.MockRestResponseCreators.withNoContent;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

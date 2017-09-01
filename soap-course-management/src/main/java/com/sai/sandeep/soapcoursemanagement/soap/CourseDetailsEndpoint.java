@@ -21,17 +21,17 @@ public class CourseDetailsEndpoint {
 	@PayloadRoot(namespace = "http://saisandeep.com/courses", localPart = "GetCourseDetailsRequest")
 	@ResponsePayload
 	public GetCourseDetailsResponse processRequest(@RequestPayload GetCourseDetailsRequest request) {
-		GetCourseDetailsResponse response = new GetCourseDetailsResponse();
 		Course course = service.findById(request.getId());
-		mapCourse(response, course);
-		return response;
+		return mapCourse(course);
 	}
 
-	private void mapCourse(GetCourseDetailsResponse response, Course course) {
+	private GetCourseDetailsResponse mapCourse(Course course) {
+		GetCourseDetailsResponse response = new GetCourseDetailsResponse();
 		CourseDetails courseDetails = new CourseDetails();
 		courseDetails.setId(course.getId());
 		courseDetails.setName(course.getName());
 		courseDetails.setDescription(course.getDescription());
 		response.setCourseDetails(courseDetails);
+		return response;
 	}
 }

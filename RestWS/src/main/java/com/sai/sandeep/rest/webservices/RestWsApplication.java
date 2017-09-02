@@ -16,17 +16,17 @@ public class RestWsApplication {
 		SpringApplication.run(RestWsApplication.class, args);
 	}
 	@Bean
-	public LocaleResolver localeResolver(){
-		SessionLocaleResolver localResolver = new SessionLocaleResolver();
-		localResolver.setDefaultLocale(Locale.US);
-		return localResolver;
-		
+	public LocaleResolver localeResolver() {
+		SessionLocaleResolver localeResolver = new SessionLocaleResolver();
+		localeResolver.setDefaultLocale(Locale.US);
+		return localeResolver;
 	}
 	
 	@Bean
-	public ResourceBundleMessageSource bundleMessageSource(){
+	public ResourceBundleMessageSource messageSource() {
 		ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
 		messageSource.setBasename("messages");
 		return messageSource;
 	}
 }
+

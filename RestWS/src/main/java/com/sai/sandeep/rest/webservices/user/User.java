@@ -5,6 +5,12 @@ import java.util.Date;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel(description="All details about users")
 public class User {
 
 	private Integer id;
@@ -12,6 +18,9 @@ public class User {
 	@Size(min=2, message="name should have atleast 2 characters")
 	private String name;
 	@Past
+	@ApiModelProperty(notes="bday should be in the past")
+	
+	//@JsonIgnore - can be used to exclude the value in resposne.
 	private Date birthDate;
 	public User(){
 		

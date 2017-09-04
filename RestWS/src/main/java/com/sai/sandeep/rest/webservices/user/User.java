@@ -1,7 +1,12 @@
 package com.sai.sandeep.rest.webservices.user;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
@@ -11,8 +16,11 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel(description="All details about users")
+@Entity
 public class User {
 
+	@Id
+	@GeneratedValue
 	private Integer id;
 	
 	@Size(min=2, message="name should have atleast 2 characters")
@@ -22,6 +30,9 @@ public class User {
 	
 	//@JsonIgnore - can be used to exclude the value in resposne.
 	private Date birthDate;
+	@OneToMany(mappedBy="user")
+	private List<Post> posts;
+	
 	public User(){
 		
 	}
@@ -48,6 +59,14 @@ public class User {
 	}
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
+	}
+	
+	
+	public List<Post> getPosts() {
+		return posts;
+	}
+	public void setPosts(List<Post> posts) {
+		this.posts = posts;
 	}
 	@Override
 	public String toString() {
